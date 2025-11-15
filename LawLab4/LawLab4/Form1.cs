@@ -1,10 +1,20 @@
 namespace LawLab4
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
-        public Form1()
+        const int SIZE = 5;
+        const string MYNAME = "Tyler Law";
+
+        int index = 0;
+        int[] taxlist = new int[SIZE];
+        public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
