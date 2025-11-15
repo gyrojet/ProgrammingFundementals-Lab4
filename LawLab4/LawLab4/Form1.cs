@@ -16,5 +16,32 @@ namespace LawLab4
         {
 
         }
+
+        private void ResetForm()
+        {
+           
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            const int MINVALUE = 50000;
+            const int MAXVALUE = 1500000;
+        }
+
+        private double GetAverage()
+        {
+            int i;
+            double totalInArray = 0.0;
+            double average = 0.0;
+
+            for (i = 0; i < taxlist.Length; i++)
+            {
+                totalInArray += taxlist[i];
+            }
+
+            average = totalInArray / taxlist.Length;
+
+            return average;
+        }
     }
 }

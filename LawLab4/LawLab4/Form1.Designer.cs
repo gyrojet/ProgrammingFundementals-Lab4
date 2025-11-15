@@ -33,9 +33,9 @@
             lblNumberDisplay = new Label();
             txtPropertyValue = new TextBox();
             grpPropertyType = new GroupBox();
-            radPrimaryResidence = new RadioButton();
-            radNonPrimaryResidence = new RadioButton();
             radCommercial = new RadioButton();
+            radNonPrimaryResidence = new RadioButton();
+            radPrimaryResidence = new RadioButton();
             lblPropertyTaxTitle = new Label();
             lblAverageTitle = new Label();
             lblPropertyTaxDisplay = new Label();
@@ -94,16 +94,16 @@
             grpPropertyType.TabStop = false;
             grpPropertyType.Text = "Property Type";
             // 
-            // radPrimaryResidence
+            // radCommercial
             // 
-            radPrimaryResidence.AutoSize = true;
-            radPrimaryResidence.Location = new Point(6, 26);
-            radPrimaryResidence.Name = "radPrimaryResidence";
-            radPrimaryResidence.Size = new Size(153, 23);
-            radPrimaryResidence.TabIndex = 0;
-            radPrimaryResidence.TabStop = true;
-            radPrimaryResidence.Text = "Primary Residence";
-            radPrimaryResidence.UseVisualStyleBackColor = true;
+            radCommercial.AutoSize = true;
+            radCommercial.Location = new Point(6, 84);
+            radCommercial.Name = "radCommercial";
+            radCommercial.Size = new Size(107, 23);
+            radCommercial.TabIndex = 2;
+            radCommercial.TabStop = true;
+            radCommercial.Text = "Commercial";
+            radCommercial.UseVisualStyleBackColor = true;
             // 
             // radNonPrimaryResidence
             // 
@@ -116,16 +116,16 @@
             radNonPrimaryResidence.Text = "Non-Primary Residence";
             radNonPrimaryResidence.UseVisualStyleBackColor = true;
             // 
-            // radCommercial
+            // radPrimaryResidence
             // 
-            radCommercial.AutoSize = true;
-            radCommercial.Location = new Point(6, 84);
-            radCommercial.Name = "radCommercial";
-            radCommercial.Size = new Size(107, 23);
-            radCommercial.TabIndex = 2;
-            radCommercial.TabStop = true;
-            radCommercial.Text = "Commercial";
-            radCommercial.UseVisualStyleBackColor = true;
+            radPrimaryResidence.AutoSize = true;
+            radPrimaryResidence.Location = new Point(6, 26);
+            radPrimaryResidence.Name = "radPrimaryResidence";
+            radPrimaryResidence.Size = new Size(153, 23);
+            radPrimaryResidence.TabIndex = 0;
+            radPrimaryResidence.TabStop = true;
+            radPrimaryResidence.Text = "Primary Residence";
+            radPrimaryResidence.UseVisualStyleBackColor = true;
             // 
             // lblPropertyTaxTitle
             // 
@@ -173,6 +173,7 @@
             btnCalculate.TabIndex = 9;
             btnCalculate.Text = "&Calculate";
             btnCalculate.UseVisualStyleBackColor = true;
+            btnCalculate.Click += btnCalculate_Click;
             // 
             // btnReset
             // 
@@ -202,7 +203,6 @@
             lblEntriesDisplay.Name = "lblEntriesDisplay";
             lblEntriesDisplay.Size = new Size(292, 316);
             lblEntriesDisplay.TabIndex = 12;
-            lblEntriesDisplay.Text = "--> hahaha thest";
             // 
             // frmMain
             // 
