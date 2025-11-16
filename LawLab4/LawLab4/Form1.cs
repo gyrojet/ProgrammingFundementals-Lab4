@@ -6,7 +6,7 @@ namespace LawLab4
         const string MYNAME = "Tyler Law";
 
         int index = 0;
-        int[] taxlist = new int[SIZE];
+        double[] taxlist = new double[SIZE];
         public frmMain()
         {
             InitializeComponent();
@@ -14,21 +14,74 @@ namespace LawLab4
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            // Replace with function later
+            lblNumberDisplay.Text = (index + 1).ToString("D2");
         }
 
         private void ResetForm()
         {
-           
+            txtPropertyValue.Text = string.Empty;
+            btnCalculate.Enabled = true;
+
+            index += 1;
+
+            lblNumberDisplay.Text = (index + 1).ToString("D2");
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            const int MINVALUE = 50000;
-            const int MAXVALUE = 1500000;
+            try
+            {
+                const double MINVALUE = 50000;
+                const double MAXVALUE = 1500000;
+
+                const double TAX_PRIMARY = 0.01714;
+                const double TAX_NONPRIMARY = 0.02275;
+                const double TAX_COMMERCIAL = 0.027518;
+
+                double dblPropertyValue;
+
+                bool boolIsNumberDouble = double.TryParse(txtPropertyValue.Text, out dblPropertyValue);
+
+                switch (boolIsNumberDouble)
+                {
+                    case true:
+
+                        int indexDisplay = index + 1;
+                        if (dblPropertyValue >= MINVALUE && dblPropertyValue <= MAXVALUE)
+                        {
+                            string dummyMessage = $"{indexDisplay.ToString("D2")}: Number Valid\n";
+                            lblEntriesDisplay.Text += dummyMessage;
+
+                            btnCalculate.Enabled = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("The number you have entered must be between $50000 and $1500000." +
+                            "\nPlease enter a number within range.", MYNAME);
+                        }
+
+                        break;
+
+                    default:
+
+                        MessageBox.Show("The number you have entered is not a double. Please enter a double.", MYNAME);
+
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occured.\n{ex.Message}", MYNAME);
+            }
         }
 
-        private double GetAverage()
+        private double GetPropertyTax(double dblValue, double dblTaxRate)
+        {
+            return (dblTaxRate * dblTaxRate);
+        }
+
+        private double GetAverageCost()
         {
             int i;
             double totalInArray = 0.0;
@@ -42,6 +95,11 @@ namespace LawLab4
             average = totalInArray / taxlist.Length;
 
             return average;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ResetForm();
         }
     }
 }
