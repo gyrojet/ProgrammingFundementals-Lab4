@@ -111,11 +111,6 @@ namespace LawLab4
             }
         }
 
-        private double GetPropertyTax(double dblValue, double dblTaxRate)
-        {
-            return (dblTaxRate * dblTaxRate);
-        }
-
         private double GetAverageCost()
         {
             // Fix later
