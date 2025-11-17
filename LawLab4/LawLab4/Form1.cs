@@ -10,13 +10,16 @@ namespace LawLab4
         public frmMain()
         {
             InitializeComponent();
-
-            radPrimaryResidence.Checked = true;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            // Replace with function later
+            InitializeForm();
+        }
+
+        private void InitializeForm()
+        {
+            radPrimaryResidence.Checked = true;
             lblNumberDisplay.Text = (index + 1).ToString("D2");
         }
 
