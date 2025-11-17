@@ -21,6 +21,19 @@ namespace LawLab4
 
         private void InitializeForm()
         {
+            index = 0;
+            Array.Clear(taxlist, 0, taxlist.Length);
+
+            lblEntriesDisplay.Text = string.Empty;
+
+            txtPropertyValue.Text = string.Empty;
+
+            btnCalculate.Enabled = true;
+            btnReset.Enabled = false;
+
+            lblPropertyTaxDisplay.Text = string.Empty;
+            lblAverageDisplay.Text = string.Empty;
+
             radPrimaryResidence.Checked = true;
             lblNumberDisplay.Text = (index + 1).ToString("D2");
         }
@@ -36,6 +49,8 @@ namespace LawLab4
             index += 1;
 
             lblNumberDisplay.Text = (index + 1).ToString("D2");
+
+            btnReset.Enabled = false;
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
@@ -91,6 +106,7 @@ namespace LawLab4
                             lblAverageDisplay.Text = dblAvg.ToString("c2");
 
                             btnCalculate.Enabled = false;
+                            btnReset.Enabled = true;
                         }
                         else
                         {
@@ -149,7 +165,7 @@ namespace LawLab4
 
                 if (dialogSelection == DialogResult.Yes)
                 {
-                    MessageBox.Show("Ok hahaha. Fuck you");
+                    InitializeForm();
                 }
                 else
                 {
