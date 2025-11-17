@@ -10,6 +10,8 @@ namespace LawLab4
         public frmMain()
         {
             InitializeComponent();
+
+            radPrimaryResidence.Checked = true;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -22,6 +24,9 @@ namespace LawLab4
         {
             txtPropertyValue.Text = string.Empty;
             btnCalculate.Enabled = true;
+
+            lblPropertyTaxDisplay.Text = string.Empty;
+            lblAverageDisplay.Text = string.Empty;
 
             index += 1;
 
@@ -47,11 +52,32 @@ namespace LawLab4
                 {
                     case true:
 
+                        double dblPropertyTax = 0.0;
+
                         int indexDisplay = index + 1;
+
                         if (dblPropertyValue >= MINVALUE && dblPropertyValue <= MAXVALUE)
                         {
-                            string dummyMessage = $"{indexDisplay.ToString("D2")}: Number Valid\n";
-                            lblEntriesDisplay.Text += dummyMessage;
+                            // Calculate tax based on 
+                            if (radPrimaryResidence.Checked)
+                            {
+                                dblPropertyTax = dblPropertyValue * TAX_PRIMARY;
+                            }
+                            else if (radNonPrimaryResidence.Checked)
+                            {
+                                dblPropertyTax = dblPropertyValue * TAX_NONPRIMARY;
+                            }
+                            else
+                            {
+                                dblPropertyTax = dblPropertyValue * TAX_COMMERCIAL;
+                            }
+
+                            lblPropertyTaxDisplay.Text = dblPropertyTax.ToString("c2");
+
+                            string strMessage = $"Entry: {indexDisplay.ToString("D2")} Tax: {dblPropertyTax.ToString("c2")}\n";
+                            lblEntriesDisplay.Text += strMessage;
+
+                            lblAverageDisplay.Text = "AHHAH";
 
                             btnCalculate.Enabled = false;
                         }
