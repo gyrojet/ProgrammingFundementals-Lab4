@@ -1,3 +1,5 @@
+using System.Diagnostics.Eventing.Reader;
+
 namespace LawLab4
 {
     public partial class frmMain : Form
@@ -133,7 +135,35 @@ namespace LawLab4
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            ResetForm();
+            const int MAXLENGTH = 4;
+
+            if (index == MAXLENGTH)
+            {
+                DialogResult dialogSelection;
+
+                dialogSelection =
+                    MessageBox.Show("Maximum of 5 list entries reached.\nWould you like to restart?",
+                    MYNAME,
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information);
+
+                if (dialogSelection == DialogResult.Yes)
+                {
+                    MessageBox.Show("Ok hahaha. Fuck you");
+                }
+                else
+                {
+                    CloseProgram();
+                }
+            }
+            else
+                ResetForm();
+        }
+
+        private void CloseProgram()
+        {
+            MessageBox.Show("Closing the program. Have a nice day!", MYNAME, MessageBoxButtons.YesNo);
+            Close();
         }
     }
 }
