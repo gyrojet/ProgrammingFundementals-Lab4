@@ -124,12 +124,14 @@ namespace LawLab4
 
             double average = 0.0;
 
-            for (i = 0; i < taxlist.Length; i++)
+            int intCurrentLength = index + 1;
+
+            for (i = 0; i < intCurrentLength; i++)
             {
                 totalInArray += taxlist[i];
             }
 
-            average = totalInArray / taxlist.Length;
+            average = totalInArray / intCurrentLength;
 
             return average;
         }

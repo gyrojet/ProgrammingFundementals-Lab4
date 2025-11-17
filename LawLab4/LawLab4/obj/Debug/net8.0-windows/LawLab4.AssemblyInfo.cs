@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LawLab4")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cc724f5f22bb515724d443c1f220c97b64dff56")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1ed883cf6bcce350b1497654486b053fd06dbc6")]
 [assembly: System.Reflection.AssemblyProductAttribute("LawLab4")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LawLab4")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
