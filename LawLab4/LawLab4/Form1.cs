@@ -75,12 +75,18 @@ namespace LawLab4
                                 dblPropertyTax = dblPropertyValue * TAX_COMMERCIAL;
                             }
 
+                            // Add prop. tax to array at current index
+                            taxlist[index] = dblPropertyTax;
+
+                            // Get average using values stored
+                            double dblAvg = GetAverageCost();
+
                             lblPropertyTaxDisplay.Text = dblPropertyTax.ToString("c2");
 
                             string strMessage = $"Entry: {indexDisplay.ToString("D2")} Tax: {dblPropertyTax.ToString("c2")}\n";
                             lblEntriesDisplay.Text += strMessage;
 
-                            lblAverageDisplay.Text = "AHHAH";
+                            lblAverageDisplay.Text = dblAvg.ToString("c2");
 
                             btnCalculate.Enabled = false;
                         }
@@ -90,13 +96,13 @@ namespace LawLab4
                             "\nPlease enter a number within range.", MYNAME);
                         }
 
-                        break;
+                    break;
 
                     default:
 
                         MessageBox.Show("The number you have entered is not a double. Please enter a double.", MYNAME);
 
-                        break;
+                    break;
                 }
             }
             catch (Exception ex)
@@ -112,8 +118,10 @@ namespace LawLab4
 
         private double GetAverageCost()
         {
+            // Fix later
             int i;
             double totalInArray = 0.0;
+
             double average = 0.0;
 
             for (i = 0; i < taxlist.Length; i++)
