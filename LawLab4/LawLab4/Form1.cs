@@ -7,8 +7,8 @@ namespace LawLab4
         const int SIZE = 5;
         const string MYNAME = "Tyler Law";
 
-        int index = 0;
-        double[] taxlist = new double[SIZE];
+        int intIndex = 0;
+        double[] dblTaxList = new double[SIZE];
         public frmMain()
         {
             InitializeComponent();
@@ -21,8 +21,8 @@ namespace LawLab4
 
         private void InitializeForm()
         {
-            index = 0;
-            Array.Clear(taxlist, 0, taxlist.Length);
+            intIndex = 0;
+            Array.Clear(dblTaxList, 0, dblTaxList.Length);
 
             lblEntriesDisplay.Text = string.Empty;
 
@@ -35,7 +35,7 @@ namespace LawLab4
             lblAverageDisplay.Text = string.Empty;
 
             radPrimaryResidence.Checked = true;
-            lblNumberDisplay.Text = (index + 1).ToString("D2");
+            lblNumberDisplay.Text = (intIndex + 1).ToString("D2");
         }
 
         private void ResetForm()
@@ -46,9 +46,9 @@ namespace LawLab4
             lblPropertyTaxDisplay.Text = string.Empty;
             lblAverageDisplay.Text = string.Empty;
 
-            index += 1;
+            intIndex += 1;
 
-            lblNumberDisplay.Text = (index + 1).ToString("D2");
+            lblNumberDisplay.Text = (intIndex + 1).ToString("D2");
 
             btnReset.Enabled = false;
         }
@@ -74,7 +74,7 @@ namespace LawLab4
 
                         double dblPropertyTax = 0.0;
 
-                        int indexDisplay = index + 1;
+                        int indexDisplay = intIndex + 1;
 
                         if (dblPropertyValue >= MINVALUE && dblPropertyValue <= MAXVALUE)
                         {
@@ -93,7 +93,7 @@ namespace LawLab4
                             }
 
                             // Add prop. tax to array at current index
-                            taxlist[index] = dblPropertyTax;
+                            dblTaxList[intIndex] = dblPropertyTax;
 
                             // Get average using values stored
                             double dblAvg = GetAverageCost();
@@ -132,20 +132,20 @@ namespace LawLab4
         private double GetAverageCost()
         {
             int i;
-            double totalInArray = 0.0;
+            double dblTotalInArray = 0.0;
 
-            double average = 0.0;
+            double dblAverage = 0.0;
 
-            int intCurrentLength = index + 1;
+            int intCurrentLength = intIndex + 1;
 
             for (i = 0; i < intCurrentLength; i++)
             {
-                totalInArray += taxlist[i];
+                dblTotalInArray += dblTaxList[i];
             }
 
-            average = totalInArray / intCurrentLength;
+            dblAverage = dblTotalInArray / intCurrentLength;
 
-            return average;
+            return dblAverage;
         }
 
         private bool IsMaxLength()
@@ -153,7 +153,7 @@ namespace LawLab4
             const int MAXLENGTH = 4;
             bool boolIsMax;
 
-            if (index == MAXLENGTH)
+            if (intIndex == MAXLENGTH)
                 boolIsMax = true;
             else
                 boolIsMax = false;
