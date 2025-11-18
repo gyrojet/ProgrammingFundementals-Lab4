@@ -131,7 +131,6 @@ namespace LawLab4
 
         private double GetAverageCost()
         {
-            // Fix later
             int i;
             double totalInArray = 0.0;
 
@@ -149,11 +148,22 @@ namespace LawLab4
             return average;
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private bool IsMaxLength()
         {
             const int MAXLENGTH = 4;
+            bool boolIsMax;
 
             if (index == MAXLENGTH)
+                boolIsMax = true;
+            else
+                boolIsMax = false;
+
+            return boolIsMax;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            if (IsMaxLength())
             {
                 DialogResult dialogSelection;
 
