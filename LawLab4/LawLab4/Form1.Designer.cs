@@ -198,7 +198,7 @@
             // 
             lblEntriesDisplay.BackColor = Color.LightCoral;
             lblEntriesDisplay.BorderStyle = BorderStyle.FixedSingle;
-            lblEntriesDisplay.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEntriesDisplay.Font = new Font("Courier New", 10F, FontStyle.Bold);
             lblEntriesDisplay.ImageAlign = ContentAlignment.BottomLeft;
             lblEntriesDisplay.Location = new Point(243, 28);
             lblEntriesDisplay.Name = "lblEntriesDisplay";
@@ -226,6 +226,7 @@
             Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Tax Program";
             Load += frmMain_Load;
             grpPropertyType.ResumeLayout(false);

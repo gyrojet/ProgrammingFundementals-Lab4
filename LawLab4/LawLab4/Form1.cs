@@ -178,7 +178,7 @@ namespace LawLab4
                         {
                             // Display error message
                             MessageBox.Show($"The number you have entered must be between {MINVALUE.ToString("c2")} and {MAXVALUE.ToString("c2")}." +
-                            "\nPlease enter a number within range.", MYNAME);
+                            "\nPlease enter a number within range.", MYNAME, MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
                             // Select and focus on textbox
                             SelectTextbox();
@@ -189,7 +189,7 @@ namespace LawLab4
                     // If the user's input was not a double:
                     default:
                         // Display error message
-                        MessageBox.Show("The number you have entered is not a double. Please enter a double.", MYNAME);
+                        MessageBox.Show("The number you have entered is not a double. Please enter a double.", MYNAME, MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
                         // Select textbox, focus on it
                         SelectTextbox();
@@ -200,7 +200,7 @@ namespace LawLab4
             catch (Exception ex)
             {
                 // Catch message, if there is an error
-                MessageBox.Show($"An error occured.\n{ex.Message}", MYNAME);
+                MessageBox.Show($"An error occured.\n{ex.Message}", MYNAME, MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -293,7 +293,7 @@ namespace LawLab4
 
                 // Gives user option to restart or quit
                 dialogSelection =
-                    MessageBox.Show("Maximum of 5 list entries reached.\nWould you like to restart?",
+                    MessageBox.Show("Maximum number of list entries reached.\nWould you like to restart?",
                     MYNAME,
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Information);
