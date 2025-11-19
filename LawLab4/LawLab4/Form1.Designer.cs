@@ -80,7 +80,7 @@
             txtPropertyValue.Location = new Point(134, 42);
             txtPropertyValue.Name = "txtPropertyValue";
             txtPropertyValue.Size = new Size(100, 27);
-            txtPropertyValue.TabIndex = 3;
+            txtPropertyValue.TabIndex = 0;
             // 
             // grpPropertyType
             // 
@@ -90,7 +90,7 @@
             grpPropertyType.Location = new Point(12, 86);
             grpPropertyType.Name = "grpPropertyType";
             grpPropertyType.Size = new Size(222, 118);
-            grpPropertyType.TabIndex = 4;
+            grpPropertyType.TabIndex = 1;
             grpPropertyType.TabStop = false;
             grpPropertyType.Text = "Property Type";
             // 
@@ -170,7 +170,7 @@
             btnCalculate.Location = new Point(12, 303);
             btnCalculate.Name = "btnCalculate";
             btnCalculate.Size = new Size(106, 41);
-            btnCalculate.TabIndex = 9;
+            btnCalculate.TabIndex = 2;
             btnCalculate.Text = "&Calculate";
             btnCalculate.UseVisualStyleBackColor = true;
             btnCalculate.Click += btnCalculate_Click;
@@ -180,7 +180,7 @@
             btnReset.Location = new Point(128, 303);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(106, 41);
-            btnReset.TabIndex = 10;
+            btnReset.TabIndex = 3;
             btnReset.Text = "&Reset";
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += btnReset_Click;
