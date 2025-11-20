@@ -90,6 +90,9 @@ namespace LawLab4
 
             // Disable reset button
             btnReset.Enabled = false;
+
+            // Place cursor in textbox
+            txtPropertyValue.Focus();
         }
 
         /* Name: btnCalculate_Click
@@ -201,6 +204,9 @@ namespace LawLab4
             {
                 // Catch message, if there is an error
                 MessageBox.Show($"An error occured.\n{ex.Message}", MYNAME, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                // Select textbox, focus on it
+                SelectTextbox();
             }
         }
 
